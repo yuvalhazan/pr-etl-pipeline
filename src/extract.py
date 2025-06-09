@@ -49,11 +49,9 @@ def get_all_github_pages(url: str, params: dict = None, per_page: int = 100, pag
 
 def fetch_merged_prs() -> list[dict]:
     """
-    Fetches all merged pull requests from the repo, filters by closed state, and verifying actual merge status using
-    merged_at date.
+    Fetches all closed pull requests from the repo, and verifying actual merge status using merged_at date.
     return: merged_pr list
     """
-
     merged_pr = []
     for pr in get_all_github_pages(config.GITHUB_API_PULLS_URL, params={"state": "closed"}):
         if pr.get("merged_at"):
@@ -71,9 +69,7 @@ def fetch_reviews(pr_number: int) -> list[dict]:
 
 
 def fetch_check_suites(sha: str) -> list[dict]:
-    """
-    Fetches the latest check_suites by the HEAD_SHA of the PR.
-    """
+    """Fetches the latest check_suites by the HEAD_SHA of the PR."""
     url = f"{config.GITHUB_REPO_URL}/commits/{sha}/check-suites"
     check_suites = next(get_all_github_pages(url=url), {}).get("check_suites", [])
     return check_suites

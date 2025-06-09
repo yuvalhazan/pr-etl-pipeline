@@ -23,7 +23,7 @@ HEADERS = {
 ROOT_LOG_DIR = Path("../logs")
 ROOT_DATA_DIR = Path("../data")
 EXTRACTED_FILE_NAME = "pr_data.json"
-PROCESSED_FILE_NAME = "pr_report_csv"
+PROCESSED_FILE_NAME = "pr_report.csv"
 
 CSV_HEADERS = ["PR_number", "PR_title", "Author", "Merge date", "CR_Passed", "CHECKS_PASSED"]
 
