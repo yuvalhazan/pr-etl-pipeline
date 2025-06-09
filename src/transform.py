@@ -18,6 +18,7 @@ def check_code_reviews(reviews: list[dict]) -> bool:
 
 
 def status_checks_passed(check_suites: list[dict]) -> bool:
+    """Checks if the all the latest PR check-suites were completed and successful."""
     return all(
         check.get("status", "").lower() == CheckStatus.COMPLETED and
         check.get("conclusion", "").lower() == CheckStatus.SUCCESS
@@ -26,6 +27,7 @@ def status_checks_passed(check_suites: list[dict]) -> bool:
 
 
 def run_transform(output_path: Path, input_path: Path) -> None:
+    """Handles processing logic"""
     with open(input_path, "r") as input_file:
         data = json.load(input_file)
 
