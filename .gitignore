@@ -1,6 +1,7 @@
 /shelf/
 *.xml
 *.iml
+.idea/
 
 .venv/
 .env
