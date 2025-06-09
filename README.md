@@ -3,8 +3,7 @@ This script communicates with GitHub API using a Personal Access Token (PAT),
 which should be saved in your environment as GITHUB_TOKEN.
 
 What it does:
-- Connects to a repo.
-  - (Should also be saved in you .env file as GITHUB_OWNER=Scytale-exercise, GITHUB_REPO=scytale-repo3 for example)
+- Connects to a repository using .env file(details below).
 - Pulls all merged PRs
 - For each PR, it grabs:
   1. Basic details: number, title, author, merged date
