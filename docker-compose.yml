@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_OWNER=${GITHUB_OWNER}
+      - GITHUB_REPO=${GITHUB_REPO}
+    working_dir: /app/src
+    command: [ "python", "main.py" ]
