@@ -1,0 +1,9 @@
+/shelf/
+*.xml
+*.iml
+
+.venv/
+.env
+
+data/
+logs/
